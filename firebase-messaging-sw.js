@@ -5,7 +5,7 @@ importScripts('https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/8.1.1/firebase-messaging.js');
 
 // Inicializa Firebase en el Service Worker
-const firebaseConfig =  {
+/* const firebaseConfig =  {
   apiKey: "AIzaSyDqbn0dqushjg4B3x6GcyKgFdYufK8eHUQ",
   authDomain: "acjrutas.firebaseapp.com",
   projectId: "acjrutas",
@@ -13,7 +13,7 @@ const firebaseConfig =  {
   messagingSenderId: "9018664511",
   appId: "1:9018664511:web:4cbefa796c56cefaf1ba8a",
   measurementId: "G-HZ4LE5TW35"
-}
+} */
 
 firebase.initializeApp(firebaseConfig);
 
