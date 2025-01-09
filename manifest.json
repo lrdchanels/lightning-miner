@@ -1,0 +1,24 @@
+{
+  "name": "Aplicación de gestión de rutas de transporte",
+  "short_name": "Rutas",
+  "description": "Aplicación de gestión de rutas de transporte",
+  "start_url": "/rutas/index.html?source=pwa",
+  "scope": "/rutas/",
+  "display": "fullscreen",
+  "display_override": ["standalone", "fullscreen"],
+  "background_color": "#212529",
+  "theme_color": "#212529",
+  "icons": [
+    {
+      "src": "img/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "gcm_sender_id": "9018664511"
+}
