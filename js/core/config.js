@@ -41,17 +41,13 @@ export const config = {
         viewId: 'home',
         controller: 'home' // Especifica el nombre del archivo del controlador
       },
-      '/earn': {
-        viewId: 'earn',
-        controller: 'earn' // Especifica el nombre del archivo del controlador
+      '/wallet': {
+        viewId: 'wallet',
+        controller: 'wallet' // Especifica el nombre del archivo del controlador
       },
-      '/notifications': {
-        viewId: 'notifications',
-        controller: 'notifications' // Especifica el nombre del archivo del controlador
-      },
-      '/profile': {
-        viewId: 'profile',
-        controller: 'profile' // Especifica el nombre del archivo del controlador
+      '/roadmap': {
+        viewId: 'roadmap',
+        controller: 'roadmap' // Especifica el nombre del archivo del controlador
       },
     }
   },

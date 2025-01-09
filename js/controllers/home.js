@@ -1,9 +1,8 @@
 // controllers/home.js
 export default async function() {
-
-  try {
-		console.log("home.js");
+	try {
 
 	} catch (error) {
+			console.log('Error in home controller:', error);
 	}
 }

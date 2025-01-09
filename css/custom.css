@@ -10,8 +10,7 @@ body {
 }
 
 body {
-  padding-top: 56px;
-  padding-bottom: 60px; /* Altura del menú inferior */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Estilos personalizados para el menú */
@@ -37,7 +36,7 @@ body {
 
 .bottom-nav .nav-link:hover,
 .bottom-nav .nav-link.active {
-  color: #0d6efd;
+  color: #AC2BA7;
 }
 
 .hidden {
@@ -52,6 +51,321 @@ body {
   display: block;
 }
 
-.nav-link.active {
-  color: #007bff; /* Color azul por defecto, cámbialo según tu paleta de colores */
+/* Splash Screen */
+#splash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #202030;
+  color: white;
+}
+
+.logo-container img {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.progress-bar-container {
+  width: 80%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background: #AC2BA7;
+  transition: width 0.1s ease-in-out;
+}
+
+#app {
+  display: none;
+  height: 100vh;
+}
+
+.loading-message {
+  color: #ffffff; /* Color del texto */
+  text-align: center;
+  margin-top: 20px; /* Espacio sobre el mensaje */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+.box {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+/* Real time btc counter */
+.crypto-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crypto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.crypto-symbol {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.crypto-price {
+  font-size: 18px;
+}
+
+.crypto-change {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.crypto-change.up {
+  color: #4CAF50;
+}
+
+.crypto-change.down {
+  color: #F44336;
+}
+
+.crypto-change i {
+  font-size: 14px;
+}
+
+/* Hashrate counter */
+.hashrate-counter i {
+  color: #FFC107; /* Color dorado para el ícono de Bitcoin */
+  margin-top: 1px;
+}
+
+.hashrate-counter {
+  font-size: 20px;
+}
+
+#hashrate-value {
+  font-weight: bold;
+}
+
+/* cards */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+}
+.l-bg-cherry {
+  background: linear-gradient(to right, #493240, #f09) !important;
+  color: #fff;
+}
+
+.l-bg-blue-dark {
+  background: linear-gradient(to right, #373b44, #4286f4) !important;
+  color: #fff;
+}
+
+.l-bg-green-dark {
+  background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+  color: #fff;
+}
+
+.l-bg-orange-dark {
+  background: linear-gradient(to right, #a86008, #ffba56) !important;
+  color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+  font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+  text-align: center;
+  line-height: 50px;
+  margin-left: 15px;
+  color: #000;
+  position: absolute;
+  right: -5px;
+  top: 20px;
+  opacity: 0.1;
+}
+
+.l-bg-cyan {
+  background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+  color: #fff;
+}
+
+.l-bg-green {
+  background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+  color: #fff;
+}
+
+.l-bg-orange {
+  background: linear-gradient(to right, #f9900e, #ffba56) !important;
+  color: #fff;
+}
+
+.l-bg-cyan {
+  background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+  color: #fff;
+}
+
+.btc-icon {
+  font-size: 5.5rem;
+}
+
+.badge-counter {
+  position: absolute;
+  top: 10px;      /* Ajusta según necesidades */
+  right: 10px;    /* Ajusta según necesidades */
+  background: #4d4c4c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;  /* Crea una forma circular */
+  font-size: 0.9em;
+}
+
+.card-statistic-3 {
+  position: relative;
+}
+
+/* free-computing-container */
+
+.hashrate-card {
+  background: #4d4c4c;
+  position: relative;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.hashrate-info {
+  margin-bottom: 8px;
+}
+
+.hashrate-value {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hashrate-claim {
+  text-align: -webkit-center;
+}
+
+.hashrate-validity {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.claim-button {
+  background-color: #AC2BA7;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.claim-button:active {
+  transform: scale(0.98);
+}
+
+.hashrate-info, .hashrate-claim {
+  padding: 10px;
+}
+
+.video-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px; /* Tamaño del cuarto de círculo */
+  height: 50px;
+  background-color: #333; /* Color de fondo del icono */
+  border-bottom-left-radius: 50px; /* Radio para hacer el cuarto de círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Color del ícono */
+}
+
+.bi-file-play {
+  font-size: 20px; /* Tamaño del ícono */
+  margin-left: 11px;
+  margin-bottom: 7px;
+}
+
+/* total-hashrate-container */
+.total-hashrate-container {
+  font-size: 20px;
+}
+
+
+/* Wallet */
+.wallet-card {
+  background: #AC2BA7; /* Color de fondo azul */
+  border-radius: 10px; /* Bordes redondeados */
+  color: white; /* Color de texto */
+  padding: 40px;
+  width: 100%; /* Ajusta según tus necesidades */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btc-icon {
+  font-size: 30px; /* Tamaño del ícono de Bitcoin */
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ocupa el ancho total de la tarjeta */
+}
+
+.wallet-body {
+  margin-top: 10px; /* Espaciado superior para separar las filas */
+  width: 100%; /* Ocupa el ancho total de la tarjeta */
+}
+
+.wallet-amount {
+  font-size: 26px; /* Ajusta el tamaño de la fuente según tus necesidades */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.wallet-title {
+  font-size: 16px; /* Tamaño del título */
+}
+
+.withdraw-button {
+  background-color: white; /* Color de fondo del botón */
+  color: #AC2BA7; /* Color del texto del botón */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados del botón */
+  padding: 10px 10px;
+  font-size: 20px; /* Tamaño de la fuente del botón */
+  cursor: pointer;
+}
+
+.withdraw-button:hover {
+  background-color: #7e207b; /* Color de fondo del botón al pasar el mouse */
+  color: white;
 }

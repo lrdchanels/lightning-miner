@@ -13,57 +13,226 @@
 		<link id="css" rel="stylesheet" href="css/custom.css?v=1.1.2">
 		<link rel="icon" href="icon.png">
 		<link rel="manifest" href="manifest.json?v=1.1.1">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 	</head> 
 
-	<body class="bg-body-tertiary"> 
-		<!-- Contenedor principal -->
-		<div class="container main">
-			<!-- Start  : #home -->
-			<section id="home" class="view" role="region" aria-hidden="true">
-				<p>Home</p>
-			</section>
-			<!-- End  : #home -->
-			 <!-- Start  : #earns -->
-			<section id="earn" class="view" role="region" aria-hidden="true">
-				<p>Earn</p>
-			</section>
-			<!-- End  : #earns -->
-			 <!-- Start  : #notifications -->
-			<section id="notifications" class="view" role="region" aria-hidden="true">
-				<p>Notifications</p>
-			</section>
-			<!-- End  : #notifications -->
-			 <!-- Start  : #profile -->
-			<section id="profile" class="view" role="region" aria-hidden="true">
-				<p>Profile</p>
-			</section>
-			<!-- End  : #profile -->
+	<body> 
+		<!-- Splash Screen -->
+		<div id="splash-screen">
+			<div class="logo-container">
+				<img src="img/icons/Lightning_Miner.png" alt="Lightning Miner">
+			</div>
+			<div class="progress-bar-container">
+				<div id="progress-bar"></div>
+			</div>
+			<div id="loading-message" class="loading-message">Loading...</div> <!-- Container for loading messages -->
 		</div>
 
+		<!-- Contenido de la aplicación -->
+		<div id="app">
+			<div class="container main">
+				<section id="home" class="view" role="region" aria-hidden="true">
+					<!-- Bitcoin Price Container -->
+					<div class="box crypto-container">
+						<div class="hashrate-counter">
+							<i class="bi bi-currency-bitcoin"></i>
+							<span id="hashrate-value">0.0000123882</span> BTC
+						</div>				
+
+						<div class="crypto">
+								<span class="crypto-symbol">BTC</span>
+								<span class="crypto-price" id="btc-price">Loading...</span>
+								<span class="crypto-change" id="btc-change">Loading...</span>
+						</div>
+					</div>
+
+					<!-- Total Hashrate -->
+					<div class="box total-hashrate-container">
+						<strong>Total hashrate: 8.12 Gh/s	</strong>
+					</div>
+
+					<!-- Free Mining Container -->
+					<div class="box free-computing-container">
+						<h2>Free computing power</h2>
+						
+						<div class="container-fluid hashrate-card">
+							<div class="hashrate-info">
+									<span class="hashrate-value">8.12 Gh/s</span>
+									<span class="hashrate-validity">24 hours of validity</span>
+							</div>
+							<div class="hashrate-claim">
+									<button class="claim-button">Claim (0/30)</button>
+							</div>
+							<div class="video-icon">
+									<i class="bi bi-file-play"></i> <!-- Asegúrate de tener FontAwesome incluido -->
+							</div>
+						</div>
+					</div>
+
+					<!-- Mining Container -->
+					<div class="box computing-container">
+						<h2>More computing power</h2>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 mb-3">
+									<div class="card l-bg-cherry">
+										<div class="card-statistic-3 p-4">
+											<div class="card-icon card-icon-large"><i class="bi bi-currency-bitcoin btc-icon"></i></div>
+											<!-- Burbuja de contador aquí -->
+											<span class="badge badge-counter">1</span>
+											<div class="mb-4">
+												<h5 class="card-title mb-0">410 Gh/s</h5>
+											</div>
+											<div class="row align-items-center mb-2 d-flex">
+												<div class="col-8">
+													<h2 class="d-flex align-items-center mb-0">
+														APR
+													</h2>
+												</div>
+												<div class="col-4 text-right">
+													<span>38,81% <i class="fa fa-arrow-up"></i></span>
+												</div>
+											</div>
+											<div class="progress mt-1 " data-height="8" style="height: 8px;">
+												<div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 38.41%;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-6 col-lg-6 mb-3">
+									<div class="card l-bg-blue-dark">
+										<div class="card-statistic-3 p-4">
+											<div class="card-icon card-icon-large"><i class="bi bi-currency-bitcoin btc-icon"></i></div>
+											<!-- Burbuja de contador aquí -->
+											<span class="badge badge-counter">0</span>
+											<div class="mb-4">
+												<h5 class="card-title mb-0">4.70 Th/s</h5>
+											</div>
+											<div class="row align-items-center mb-2 d-flex">
+												<div class="col-8">
+													<h2 class="d-flex align-items-center mb-0">
+														APR
+													</h2>
+												</div>
+												<div class="col-4 text-right">
+													<span>66% <i class="fa fa-arrow-up"></i></span>
+												</div>
+											</div>
+											<div class="progress mt-1 " data-height="8" style="height: 8px;">
+												<div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 66%;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-6 col-lg-6 mb-3">
+									<div class="card l-bg-green-dark">
+										<div class="card-statistic-3 p-4">
+											<div class="card-icon card-icon-large"><i class="bi bi-currency-bitcoin btc-icon"></i></div>
+											<!-- Burbuja de contador aquí -->
+											<span class="badge badge-counter">4</span>
+											<div class="mb-4">
+												<h5 class="card-title mb-0">8.70 Th/s</h5>
+											</div>
+											<div class="row align-items-center mb-2 d-flex">
+												<div class="col-8">
+													<h2 class="d-flex align-items-center mb-0">
+														APR
+													</h2>
+												</div>
+												<div class="col-4 text-right">
+													<span>80% <i class="fa fa-arrow-up"></i></span>
+												</div>
+											</div>
+											<div class="progress mt-1 " data-height="8" style="height: 8px;">
+												<div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-6 col-lg-6 mb-3">
+									<div class="card l-bg-orange-dark">
+										<div class="card-statistic-3 p-4">
+											<div class="card-icon card-icon-large"><i class="bi bi-currency-bitcoin btc-icon"></i></div>
+											<!-- Burbuja de contador aquí -->
+											<span class="badge badge-counter">3</span>
+											<div class="mb-4">
+												<h5 class="card-title mb-0">12.00 Th/s</h5>
+											</div>
+											<div class="row align-items-center mb-2 d-flex">
+												<div class="col-8">
+													<h2 class="d-flex align-items-center mb-0">
+														APR
+													</h2>
+												</div>
+												<div class="col-4 text-right">
+													<span>100% <i class="fa fa-arrow-up"></i></span>
+												</div>
+											</div>
+											<div class="progress mt-1 " data-height="8" style="height: 8px;">
+												<div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="wallet" class="view mt-3" role="region" aria-hidden="true">
+					<div class="wallet-card">
+						<div class="wallet-header">
+								<div>
+									<i class="bi bi-currency-bitcoin btc-icon"></i> <!-- Ícono de Bitcoin de Bootstrap Icons -->
+									<span class="wallet-title">Bitcoin</span>
+								</div>
+								<button class="withdraw-button">Withdraw</button>
+						</div>
+						<div class="wallet-body">
+							<span class="wallet-amount">0.0000123882382083 BTC</span>
+						</div>
+					</div>
+
+					<!-- withdraws -->
+					<div class="box">
+						<h2>Withdrawal history</h2>
+					</div>
+				</section>
+
+				<section id="roadmap" class="view" role="region" aria-hidden="true">
+					<p>Roadmap</p>
+				</section>
+
+				<section id="profile" class="view" role="region" aria-hidden="true">
+					<p>Profile</p>
+				</section>
+			</div>
+
 			<!-- Menú de navegación inferior -->
-			<nav id="navbarsExampleDefault" class="bottom-nav d-flex justify-content-around align-items-center py-2">
+			<nav id="navbarsExampleDefault" class="bottom-nav d-flex justify-content-around align-items-center py-2 bg-body-tertiary">
 				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/home')">
-					<i class="bi bi-house-door"></i><br>Home
+					<i class="bi bi-currency-bitcoin"></i><br>Home
 				</a>
-				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/earn')">
-					<i class="bi bi-currency-bitcoin"></i><br>Earn
+				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/wallet')">
+					<i class="bi bi-wallet"></i><br>Wallet
 				</a>
-				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/notifications')">
-					<i class="bi bi-bell"></i><br>Notifications
-				</a>
-				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/profile')">
-					<i class="bi bi-person"></i><br>Profile
+				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/roadmap')">
+					<i class="bi bi-map"></i><br>Roadmap
 				</a>
 			</nav>
+		</div>		
 
-			<!-- Scripts -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/jquery.crypt.js"></script>
-			<script src="js/clockpicker.js"></script>
-			<script src="js/core/app.js?v=1.1.2" type="module"></script>
-			<script src="js/custom.js?v=1.1.2" type="module"></script>
-			<script src="js/bootstrap.bundle.min.js"></script>
-			<script src="js/password.js"></script>
-
+		<!-- Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.crypt.js"></script>
+		<script src="js/clockpicker.js"></script>
+		<script src="js/core/app.js?v=1.1.2" type="module"></script>
+		<script src="js/custom.js?v=1.1.2" type="module"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/password.js"></script>
+		<script src="js/pages/home.js"></script>
 	</body>
 </html>
