@@ -11,14 +11,12 @@ async function navigate(path, params = {}) {
     path = basePath + path;
   }
 
-  var element = document.getElementById('navbarsExampleDefault');
-  element.classList.remove('open');
-
   // Ajustar la ruta si no existe, redirigir a la página de inicio
   const relativePath = path.replace(basePath, '');
   const routeConfig = paths[relativePath];
   if (!routeConfig) {
     path = `${basePath}/`;
+    updateNavLinks('/'); // Asegurar que se actualizan los ítems del menú si no existe la ruta
     return; // Terminar si no hay configuración válida para la ruta
   }
 
@@ -35,6 +33,8 @@ async function navigate(path, params = {}) {
   } catch (error) {
     console.error('Error loading the module:', error);
   }
+
+  updateNavLinks(relativePath); // Actualizar los ítems del menú cada vez que se navega
 
   // Actualizar la vista para mostrar solo la vista relevante
   Object.values(paths).forEach((route) => {
@@ -71,6 +71,18 @@ function getCurrentRoute() {
   return  currentPath
 }
 
+// Añadir o quitar la clase 'active' a los ítems del menú de navegación
+function updateNavLinks(activePath) {
+  const links = document.querySelectorAll('.bottom-nav .nav-link');
+  links.forEach(link => {
+    const path = link.getAttribute('onclick').match(/navigate\('([^']+)'/)[1];
+    if (path === activePath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
 
 
 // Exportar las funciones para ser utilizadas externamente

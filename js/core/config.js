@@ -13,7 +13,6 @@ export const config = {
       '/rutas/js/json2.min.js',
       '/rutas/js/localise.js',
       '/rutas/js/password.js',
-      '/rutas/sounds/beep.mp3',
       '/rutas/locales/en.json',
       '/rutas/locales/es.json'
     ]
@@ -27,28 +26,33 @@ export const config = {
         autoIncrement: true,
         indices: [
           { name: 'user', keyPath: 'user', unique: false },
-          { name: 'token', keyPath: 'token', unique: true },
-          { name: 'password', keyPath: 'password', unique: false },
-          { name: 'whatsapp', keyPath: 'whatsapp', unique: false },
-          { name: 'nomOperari', keyPath: 'nomOperari', unique: false },
-          { name: 'codiSeccio', keyPath: 'codiSeccio', unique: false }
-
         ]
       }
     }
   },
   api: {
-    baseURL: 'https://bugasys.lavanderialosmocanes.com/rutas',
+    baseURL: 'https://exemple.com/exemple',
   },
   routes: {
-    basePath: '/foxy-mobile',
-    //initialPath: '/settings', // Ruta inicial opcional
-    initialPath: '', // Ruta inicial opcional
+    basePath: '/lightning-miner',
+    initialPath: '/home', // Ruta inicial opcional
     paths: {
-      '/ruta': {
-        viewId: 'ruta',
-        controller: 'ruta' // Especifica el nombre del archivo del controlador
-      }
+      '/home': {
+        viewId: 'home',
+        controller: 'home' // Especifica el nombre del archivo del controlador
+      },
+      '/earn': {
+        viewId: 'earn',
+        controller: 'earn' // Especifica el nombre del archivo del controlador
+      },
+      '/notifications': {
+        viewId: 'notifications',
+        controller: 'notifications' // Especifica el nombre del archivo del controlador
+      },
+      '/profile': {
+        viewId: 'profile',
+        controller: 'profile' // Especifica el nombre del archivo del controlador
+      },
     }
   },
   /* firebaseConfig: {

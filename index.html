@@ -5,69 +5,65 @@
 		<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta content='yes' name='apple-mobile-web-app-capable'/>
 		<meta content='yes' name='mobile-web-app-capable'/>
-		<title>Title</title> 
+		<title>Lightning Minner</title> 
 		<link rel="stylesheet" href="css/bootstrap.min.css?v=1.1.2">
 		<link rel="stylesheet" href="css/bootstrap-icons.css?v=1.1.2">
 		<link rel="stylesheet" href="css/clockpicker.css">
 		<link rel="stylesheet" href="css/core/lib/toast.css">
 		<link id="css" rel="stylesheet" href="css/custom.css?v=1.1.2">
 		<link rel="icon" href="icon.png">
-    <link rel="manifest" href="manifest.json?v=1.1.1">
+		<link rel="manifest" href="manifest.json?v=1.1.1">
 	</head> 
-		
+
 	<body class="bg-body-tertiary"> 
-		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Title</a>
-				
-				<button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-								<a class="nav-link" href="javascript:void(0);" onclick="navigate('/ruta')">Ruta</a>
-						</li>
-						<li class="nav-item">
-								<a class="nav-link" href="javascript:void(0);" onclick="navigate('/ruta')">Ruta</a>
-						</li>
-					</ul>				
-				</div>
-			</div>
-		</nav>
-							
-
+		<!-- Contenedor principal -->
 		<div class="container main">
-			<!-- Start  : #ruta -->
-			<section id="ruta" class="view" role="region" aria-hidden="true">
-				<header class="mt-3">
-					<div class="d-flex align-items-center p-3 text-white bg-purple rounded shadow-sm">
-						<h3>Ruta</h3>
-					</div>
-				</header>
-			
-				<article class="view-content mt-3">
-					<div class="wrapper">
-						<form aria-owns="btn-add-done">
-					</div>
-				</article>
-			
-				<footer class="mt-3">
-					<div class="d-grid gap-2">
-					</div>
-				</footer>
+			<!-- Start  : #home -->
+			<section id="home" class="view" role="region" aria-hidden="true">
+				<p>Home</p>
 			</section>
-			<!-- End  : #ruta -->
+			<!-- End  : #home -->
+			 <!-- Start  : #earns -->
+			<section id="earn" class="view" role="region" aria-hidden="true">
+				<p>Earn</p>
+			</section>
+			<!-- End  : #earns -->
+			 <!-- Start  : #notifications -->
+			<section id="notifications" class="view" role="region" aria-hidden="true">
+				<p>Notifications</p>
+			</section>
+			<!-- End  : #notifications -->
+			 <!-- Start  : #profile -->
+			<section id="profile" class="view" role="region" aria-hidden="true">
+				<p>Profile</p>
+			</section>
+			<!-- End  : #profile -->
 		</div>
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.crypt.js"></script>
-		<script src="js/clockpicker.js"></script>
-		<script src="js/core/app.js?v=1.1.2" type="module"></script>
-		<script src="js/custom.js?v=1.1.2" type="module"></script>
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/password.js"></script>
-	</body>
+			<!-- Menú de navegación inferior -->
+			<nav id="navbarsExampleDefault" class="bottom-nav d-flex justify-content-around align-items-center py-2">
+				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/home')">
+					<i class="bi bi-house-door"></i><br>Home
+				</a>
+				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/earn')">
+					<i class="bi bi-currency-bitcoin"></i><br>Earn
+				</a>
+				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/notifications')">
+					<i class="bi bi-bell"></i><br>Notifications
+				</a>
+				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/profile')">
+					<i class="bi bi-person"></i><br>Profile
+				</a>
+			</nav>
 
+			<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.crypt.js"></script>
+			<script src="js/clockpicker.js"></script>
+			<script src="js/core/app.js?v=1.1.2" type="module"></script>
+			<script src="js/custom.js?v=1.1.2" type="module"></script>
+			<script src="js/bootstrap.bundle.min.js"></script>
+			<script src="js/password.js"></script>
+
+	</body>
 </html>
