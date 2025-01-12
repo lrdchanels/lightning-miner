@@ -13,6 +13,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  font-size: 20px;
+}
+
 /* Estilos personalizados para el menú */
 .bottom-nav {
   position: fixed;
@@ -30,13 +34,12 @@ body {
 
 .bottom-nav .nav-link {
   color: white;
-  padding: 10px 0;
   font-size: 14px;
 }
 
 .bottom-nav .nav-link:hover,
 .bottom-nav .nav-link.active {
-  color: #AC2BA7;
+  color: #c00876;
 }
 
 .hidden {
@@ -49,6 +52,11 @@ body {
 
 .view.active {
   display: block;
+}
+
+/* nav icons */
+#navbarsExampleDefault i {
+  font-size: 27px;
 }
 
 /* Splash Screen */
@@ -79,13 +87,13 @@ body {
 #progress-bar {
   height: 100%;
   width: 0;
-  background: #AC2BA7;
+  background: #c00876;
   transition: width 0.1s ease-in-out;
 }
 
 #app {
   display: none;
-  height: 100vh;
+  height: calc(100vh - 110px);
 }
 
 .loading-message {
@@ -98,7 +106,7 @@ body {
 .box {
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 10px;
   width: 100%;
   margin: 20px 0px;
@@ -117,17 +125,12 @@ body {
   gap: 10px;
 }
 
-.crypto-symbol {
-  font-size: 20px;
-  color: #ccc;
-}
-
 .crypto-price {
   font-size: 18px;
 }
 
 .crypto-change {
-  font-size: 18px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -152,11 +155,19 @@ body {
 }
 
 .hashrate-counter {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+#hashrate-btc {
+  color: #ccc;
 }
 
 #hashrate-value {
   font-weight: bold;
+}
+
+.total-hashrate-value {
+  color: #ccc;
 }
 
 /* cards */
@@ -244,20 +255,16 @@ body {
 
 .hashrate-card {
   background: #4d4c4c;
-  position: relative;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  width: 100%;
 }
 
 .hashrate-info {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .hashrate-value {
   display: block;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -271,7 +278,7 @@ body {
 }
 
 .claim-button {
-  background-color: #AC2BA7;
+  background-color: #c00876;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -286,10 +293,6 @@ body {
 
 .claim-button:active {
   transform: scale(0.98);
-}
-
-.hashrate-info, .hashrate-claim {
-  padding: 10px;
 }
 
 .video-icon {
@@ -314,24 +317,20 @@ body {
 
 /* total-hashrate-container */
 .total-hashrate-container {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 
 /* Wallet */
 .wallet-card {
-  background: #AC2BA7; /* Color de fondo azul */
+  background: #c00876; /* Color de fondo azul */
   border-radius: 10px; /* Bordes redondeados */
   color: white; /* Color de texto */
-  padding: 40px;
+  padding: 10px 40px;
   width: 100%; /* Ajusta según tus necesidades */
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.btc-icon {
-  font-size: 30px; /* Tamaño del ícono de Bitcoin */
 }
 
 .wallet-header {
@@ -352,12 +351,12 @@ body {
 }
 
 .wallet-title {
-  font-size: 16px; /* Tamaño del título */
+  font-size: 22px; /* Tamaño del título */
 }
 
 .withdraw-button {
   background-color: white; /* Color de fondo del botón */
-  color: #AC2BA7; /* Color del texto del botón */
+  color: #c00876; /* Color del texto del botón */
   border: none;
   border-radius: 5px; /* Bordes redondeados del botón */
   padding: 10px 10px;
@@ -366,6 +365,36 @@ body {
 }
 
 .withdraw-button:hover {
-  background-color: #7e207b; /* Color de fondo del botón al pasar el mouse */
+  background-color: rgb(138, 5, 85); /* Color de fondo del botón al pasar el mouse */
   color: white;
+}
+
+.wallet-header .bi-currency-bitcoin {
+  font-size: 4.5rem; /* Tamaño del ícono */
+}
+
+.withdraw-history-box {
+  min-height: calc(100vh - 307px);
+}
+
+.withdraw-history-card {
+  background: #4d4c4c;
+  color: white;
+  padding: 1.5rem;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* Modal */
+.modal-header {
+  background-color: #E0098A;
+}
+
+#submitWithdrawModal {
+  background-color: white;
+  color: #E0098A;
+  border: none;
 }

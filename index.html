@@ -36,11 +36,11 @@
 					<div class="box crypto-container">
 						<div class="hashrate-counter">
 							<i class="bi bi-currency-bitcoin"></i>
-							<span id="hashrate-value">0.0000123882</span> BTC
+							<span id="hashrate-value">0.0000123882</span>
+							<span id="hashrate-btc">BTC</span>
 						</div>				
 
 						<div class="crypto">
-								<span class="crypto-symbol">BTC</span>
 								<span class="crypto-price" id="btc-price">Loading...</span>
 								<span class="crypto-change" id="btc-change">Loading...</span>
 						</div>
@@ -48,30 +48,38 @@
 
 					<!-- Total Hashrate -->
 					<div class="box total-hashrate-container">
-						<strong>Total hashrate: 8.12 Gh/s	</strong>
+						<strong>Total Hashrate: </strong><span class="total-hashrate-value">8.12 Gh/s</span>
 					</div>
 
 					<!-- Free Mining Container -->
 					<div class="box free-computing-container">
-						<h2>Free computing power</h2>
+						<h2>Free Bitcoin Rewards</h2>
 						
-						<div class="container-fluid hashrate-card">
-							<div class="hashrate-info">
-									<span class="hashrate-value">8.12 Gh/s</span>
-									<span class="hashrate-validity">24 hours of validity</span>
-							</div>
-							<div class="hashrate-claim">
-									<button class="claim-button">Claim (0/30)</button>
-							</div>
-							<div class="video-icon">
-									<i class="bi bi-file-play"></i> <!-- Asegúrate de tener FontAwesome incluido -->
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12">
+									<div class="card hashrate-card">
+										<div class="p-4">
+											<div class="hashrate-info">
+												<h5 class="hashrate-value">Earn 1 mSat per video</h5>
+												<span class="hashrate-validity">24 hours of validity</span>
+											</div>
+											<div class="hashrate-claim">
+												<button class="claim-button">Claim (0/30)</button>
+											</div>
+											<div class="video-icon">
+												<i class="bi bi-file-play"></i> <!-- Asegúrate de tener FontAwesome incluido -->
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Mining Container -->
 					<div class="box computing-container">
-						<h2>More computing power</h2>
+						<h2>More Computing Power</h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-xl-6 col-lg-6 mb-3">
@@ -126,7 +134,7 @@
 									</div>
 								</div>
 
-								<div class="col-xl-6 col-lg-6 mb-3">
+								<div class="col-xl-6 col-lg-6 mb-3 mb-lg-0 mb-xl-0">
 									<div class="card l-bg-green-dark">
 										<div class="card-statistic-3 p-4">
 											<div class="card-icon card-icon-large"><i class="bi bi-currency-bitcoin btc-icon"></i></div>
@@ -152,7 +160,7 @@
 									</div>
 								</div>
 
-								<div class="col-xl-6 col-lg-6 mb-3">
+								<div class="col-xl-6 col-lg-6">
 									<div class="card l-bg-orange-dark">
 										<div class="card-statistic-3 p-4">
 											<div class="card-icon card-icon-large"><i class="bi bi-currency-bitcoin btc-icon"></i></div>
@@ -186,19 +194,24 @@
 					<div class="wallet-card">
 						<div class="wallet-header">
 								<div>
-									<i class="bi bi-currency-bitcoin btc-icon"></i> <!-- Ícono de Bitcoin de Bootstrap Icons -->
+									<i class="bi bi-currency-bitcoin"></i> <!-- Ícono de Bitcoin de Bootstrap Icons -->
 									<span class="wallet-title">Bitcoin</span>
 								</div>
-								<button class="withdraw-button">Withdraw</button>
-						</div>
+								<button class="withdraw-button" data-bs-toggle="modal" data-bs-target="#withdrawModal">Withdraw</button>
+							</div>
 						<div class="wallet-body">
 							<span class="wallet-amount">0.0000123882382083 BTC</span>
 						</div>
 					</div>
 
 					<!-- withdraws -->
-					<div class="box">
+					<div class="box withdraw-history-box">
 						<h2>Withdrawal history</h2>
+						<div class="cards">
+							<div class="card withdraw-history-card">
+								<span>Hola</span>
+							</div>
+						</div>
 					</div>
 				</section>
 
@@ -214,16 +227,44 @@
 			<!-- Menú de navegación inferior -->
 			<nav id="navbarsExampleDefault" class="bottom-nav d-flex justify-content-around align-items-center py-2 bg-body-tertiary">
 				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/home')">
-					<i class="bi bi-currency-bitcoin"></i><br>Home
+					<i class="nav-icon-home bi bi-house"></i><br>Home
 				</a>
 				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/wallet')">
-					<i class="bi bi-wallet"></i><br>Wallet
+					<i class="nav-icon-wallet bi bi-wallet"></i><br>Wallet
 				</a>
 				<a class="nav-link nav-item" href="javascript:void(0);" onclick="navigate('/roadmap')">
 					<i class="bi bi-map"></i><br>Roadmap
 				</a>
 			</nav>
-		</div>		
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+			<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+							<div class="modal-header">
+									<h5 class="modal-title" id="withdrawModalLabel">Withdraw Bitcoin</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+									<form>
+											<div class="mb-3">
+													<label for="address-input" class="form-label">Invoice</label>
+													<input type="text" class="form-control" id="address-input" placeholder="Enter invoice">
+											</div>
+											<div class="mb-3">
+													<label for="amount-input" class="form-label">Amount</label>
+													<div class="input-group">
+															<input type="text" class="form-control" id="amount-input" placeholder="Enter amount">
+															<button class="btn btn-outline-secondary" type="button" id="max-button">Max</button>
+													</div>
+											</div>
+											<button id="submitWithdrawModal" type="submit" class="btn btn-primary w-100">Save</button>
+									</form>
+							</div>
+					</div>
+			</div>
+		</div>
 
 		<!-- Scripts -->
 		<script src="js/jquery.min.js"></script>
@@ -234,5 +275,6 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/password.js"></script>
 		<script src="js/pages/home.js"></script>
+		<script src="js/pages/wallet.js" type="module"></script>
 	</body>
 </html>
